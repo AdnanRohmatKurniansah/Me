@@ -2,19 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: sans-serif;
+}
+
 .intro h1{
   text-align: left;
 }
 
 @media (max-width: 992px) {
-  .hero .imgMobile img {
-    display: inline-block;
-  }
   .intro h1{
     text-align: center;
   }
-  .intro .medsos{
-    text-align: center;
+  .intro p {
+    margin: 0 10px;
+  }
+  .hero .intro .icons{
+    justify-content: center;
   }
 }
+
+.card .content .back{
+  transition:1s;
+  z-index:1;
+}
+
+.from-left{
+  top:0;
+  left:-100%;
+}
+.card:hover .content .from-left {
+  left:0%;
+}
+
+.colored-toast {
+  background-color: #a5dc86 !important;
+  color: white;
+}
+
+.navbar, .navbar-center, .toggle, .hero, .background, .about, .experience, .projects, .contact, #footer {
+  transition: background-color 0.5s ease-out;
+}
+
+.navBg-dark {
+  background-color: rgb(4, 3, 29);
+}
+
+.bg-dark {
+  background-color: rgb(8, 8, 27);
+}
+
 
