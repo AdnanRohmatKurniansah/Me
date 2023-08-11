@@ -1,9 +1,8 @@
-
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles"
 
-const Background = () => {
+const Background = ({ darkMode }) => {
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
@@ -14,19 +13,20 @@ const Background = () => {
   return (
     <Particles
       id="tsparticles"
+      className="background"
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
         name: "Link Triangles",
         particles: {
             number: {
-                value: 100,
+                value: 150,
                 density: {
                     enable: true,
                 },
             },
             color: {
-                value: "#ff0000",
+                value: darkMode ? "#ffffff" : "#2db2cd",
                 animation: {
                     enable: true,
                     speed: 10,
@@ -48,12 +48,12 @@ const Background = () => {
             links: {
                 enable: true,
                 distance: 150,
-                color: "random",
+                color: darkMode ? "#ffffff" : "#2db2cd",
                 opacity: 0.4,
                 width: 1,
                 triangles: {
                     enable: true,
-                    color: "#ffffff",
+                    color: darkMode ? "#ffffff" : "#2db2cd",
                     opacity: 0.1,
                 },
             },
@@ -68,10 +68,10 @@ const Background = () => {
                     enable: true,
                     mode: "repulse",
                 },
-                onClick: {
-                    enable: true,
-                    mode: "push",
-                },
+                // onClick: {
+                //     enable: true,
+                //     mode: "push",
+                // },
             },
             modes: {
                 grab: {
@@ -98,7 +98,7 @@ const Background = () => {
             },
         },
         background: {
-            color: "#000000",
+            color: darkMode ? "#000000" : "#f5f5f5",
         },
     }}
     />
