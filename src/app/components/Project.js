@@ -45,7 +45,7 @@ const Project = ({ darkMode }) => {
                                 <p className="text-lg">{project.desc}</p>
                             </div>
                             <div className="view flex mt-3 gap-2">
-                                <a href={project.site} target="_blank" className="btn btn-sm btn-info text-white bg-indigo-500 focus:outline-none hover:bg-indigo-600">Visit Site</a>
+                                <a href={project.site} target="_blank" className="btn btn-sm btn-info text-white bg-indigo-500 hover:bg-indigo-600 shadow-lg shadow-indigo-500/50">Visit Site</a>
                             </div>
                         </div>
                     </div>
