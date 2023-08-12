@@ -40,7 +40,7 @@ const Hero = ({ darkMode }) => {
       smooth={true}
       duration={1000}
     >
-      <i className="text-4xl mt-20 fa-sharp fa-solid fa-arrow-down fa-fade"></i>
+      <i className="text-4xl mt-20 mb-5 fa-sharp fa-solid fa-arrow-down fa-fade"></i>
     </Link>
     </div>
     )

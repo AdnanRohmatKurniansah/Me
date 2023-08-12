@@ -28,9 +28,17 @@ const Navbar = ({ darkMode, toggleMode }) => {
         </ul>
       </div>
       <div className="navbar-end">
-        <i class={`${darkMode ? "text-white" : "text-black"} fa-solid fa-cloud-sun mr-2`}></i>
-        <input type="checkbox" onChange={toggleMode} checked={darkMode} className="toggle" />
-        <i class={`${darkMode ? "text-white" : "text-black"} fa-solid fa-cloud-moon ml-2`}></i>
+      <button className="btn btn-circle btn-ghost">
+          <label className="swap w-12 h-12">
+            <img src="/assets/toggle/night.png" className="w-8 h-8 swap-off image-full rounded-full" />
+            <input
+              type="checkbox"
+              onChange={toggleMode}
+              checked={darkMode}
+            />
+            <img src="/assets/toggle/sun.png" className="w-8 h-8 swap-on image-full rounded-full" />
+          </label>
+        </button>
       </div>
     </div>
   );
