@@ -22,19 +22,6 @@
   }
 }
 
-.card .content .back{
-  transition:1s;
-  z-index:1;
-}
-
-.from-left{
-  top:0;
-  left:-100%;
-}
-.card:hover .content .from-left {
-  left:0%;
-}
-
 .colored-toast {
   background-color: #a5dc86 !important;
   color: white;
@@ -51,5 +38,6 @@
 .bg-dark {
   background-color: rgb(8, 8, 27);
 }
+
 
 

@@ -8,16 +8,22 @@ const Project = ({ darkMode }) => {
             site: 'https://villa.arkweb.my.id'
         },
         {
+            name: 'Yuk Review',
+            image: '/assets/projects/yukreview.png',
+            desc: 'Web scrapping from imdb which will provides information about movies',
+            site: 'https://yukreview.arkweb.my.id'
+        },
+        {
             name: 'Tic Tac toe',
             image: '/assets/projects/tictactoe.png',
             desc: 'Simple tic tac toe game that you can play with your friends',
             site: 'https://tic-tac-toe-gray-xi.vercel.app/'
         },
         {
-            name: 'YukReview',
-            image: '/assets/projects/yukreview.png',
-            desc: 'YukReview is a web scrapping from imdb which will provides information about movies',
-            site: 'https://yukreview.arkweb.my.id'
+            name: 'ImagineMate',
+            image: '/assets/projects/imasite.png',
+            desc: 'ImagineMate is a web generate image, you can imagine the image you want',
+            site: 'https://imasite.vercel.app'
         },
         {
             name: 'Karma Store',
@@ -29,31 +35,31 @@ const Project = ({ darkMode }) => {
     ]
 
     return (
-    <div className={`${darkMode ? "bg-dark text-white" : "bg-base-300"} projects text-center flex flex-col justify-center`} id="projects">
-      <h1 className="text-5xl mx-5 md:mx-auto font-bold mt-20 text-center">My Projects</h1>
-      <span className="mx-auto mt-5 mb-3 w-2/5 h-1 flex justify-center rounded bg-gradient-to-r from-rose-400 via-sky-500 to-cyan-500"></span>
-        <div className="px-5 md:container md:px-52 mt-8">
-            {projects.map((project, i) => {
-                return (
-                    <div className="project md:grid md:grid-cols-4 mb-10" key={i} data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                        <div className="project-img col-span-2 flex justify-end">
-                            <img className="w-full md:w-3/4 h-full md:h-48 rounded-xl" src={project.image} />
-                        </div>
-                        <div className="project-detail col-span-2 my-auto pl-0 md:pl-8">
-                            <h1 className="text-left text-xl mt-2 font-bold">{project.name}</h1>
-                            <div className="project-desc text-left pt-2">
-                                <p className="text-lg">{project.desc}</p>
-                            </div>
-                            <div className="view flex mt-3 gap-2">
-                                <a href={project.site} target="_blank" className="btn btn-sm btn-info text-white bg-indigo-500 hover:bg-indigo-600 shadow-lg shadow-indigo-500/50">Visit Site</a>
-                            </div>
-                        </div>
-                    </div>
-                    )
-                })
-            }
+    <div className={`${darkMode ? "bg-dark text-white" : "bg-base-300"} projects flex flex-col justify-center`} id="projects">
+        <div className="ml-5 md:ml-12 max-w-3xl">
+            <h1 className="text-5xl font-bold mt-20 text-left">Projects</h1>
+            <span className="my-5 mb-3 w-3/5 h-1 flex justify-center rounded bg-gradient-to-r from-rose-400 via-sky-500 to-cyan-500"></span>
+            <p className={`text-2xl mt-3 ${darkMode ? "text-gray-200" : "text-gray-500"}`}>Projects I have done, Each project is briefly described with links to live demos in it</p>
         </div>
-        <div className="more mt-16 md:mt-20 mb-10">
+        <div className="container px-5 md:mx-auto mt-8 grid md:grid-cols-3 justify-center items-center gap-6">
+          {projects.map((project, i) => {
+              return (
+              <div className="column text-black mt-5 md:mt-0" key={i} data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
+                  <div className={`card p-3 text-center ${darkMode ? "bg-slate-800 text-white" : "bg-white"} shadow-lg rounded-xl`}>
+                      <div className="content w-full h-full">
+                          <img className="image" width="100%" src={project.image} style={{ height: '230px' }} />
+                          <div className="text-left">
+                            <h1 className="font-semibold my-2">{project.name}</h1>
+                            <p className={`${darkMode ? "text-white" : "text-gray-500"}`}>{project.desc}</p>
+                            <a className="btn my-2 btn-primary btn-sm" target="_blank" href={project.site}>Visit</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              )
+          })}
+        </div>
+        <div className="more mt-28 md:mt-28 mb-10 text-center">
             <h2 className="font-bold text-gray-500">Want to see more?</h2>
             <h2 className="font-bold">See on my <a className="underline decoration-solid" href="https://github.com/AdnanRohmatKurniansah?tab=repositories" target="_blank">github</a> for more</h2>
         </div>
